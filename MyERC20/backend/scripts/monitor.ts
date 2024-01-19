@@ -6,7 +6,6 @@ async function delayFor(ms: number) {
 
 async function main() {
     const contractAddress = "0xFE0F7827bC4aB6BA263B824318f216A7beE59572";
-
     const TokeContact = await ethers.getContractFactory("MyERC20Token");
     const contract = await TokeContact.attach(contractAddress) as any;
 

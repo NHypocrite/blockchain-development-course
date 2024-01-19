@@ -24,8 +24,9 @@ async function main() {
     console.log(`Allowance (${owner.address}, ${spender}):`, await contract.allowance(owner.address, spender));
 
     tx = await contract.approve(spender, 100000);
-    await tx.wait();
+    const reci = await tx.wait();
     console.log(`Allowance (${owner.address}, ${spender}):`, await contract.allowance(owner.address, spender));
+    // console.log("txn receipt:", reci);
 
     tx = await contract.approve(spender, 0);
     await tx.wait();
